@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rekruto</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+	<header>
+		<h1>Test task</h1>
+	</header>
+	<main>
+        <form>
+            <label for="name">Enter name:</label>
+            <input type="text" id="name" name="name">
+            <label for="message">Enter message:</label>
+            <input type="text" id="message" name="message">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="output">
+            {% if 'name' in request.GET and 'message' in request.GET %}Hello, {{ name }}! {{ message }}.
+            {% else %} Rekruto! Давай дружить!
+            {% endif %}
+        </div>
+        <div id="right">
+
+        </div>
+	</main>
+	<footer>
+		<p>&copy; 2023 Github: v-martin. Telegram: @Abo_Holo.</p>
+	</footer>
+</body>
+</html>
